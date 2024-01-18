@@ -1,0 +1,16 @@
+scheduler_id: "12D3KooWQER7HEpwsvqSzqzaiV36d3Bn6DZrnwEunnzS76pgZkMU"
+send_metrics: true
+worker_inactive_threshold_sec: 120
+worker_greylist_time_sec: 600
+default_query_timeout_sec: 60
+summary_print_interval_sec: 30
+workers_update_interval_sec: 180
+available_datasets:
+  ethereum-mainnet: "czM6Ly9ldGhlcmV1bS1tYWlubmV0LTE"
+  binance-mainnet: "czM6Ly9ic2MtbWFpbm5ldC0x"
+  base-mainnet: "czM6Ly9iYXNlLTE"
+  moonbeam-mainnet: "czM6Ly9tb29uYmVhbS1ldm0tMQ"
+allocate_interval_sec: 60
+compute_units:
+  minimum: 1
+  allocate: 2

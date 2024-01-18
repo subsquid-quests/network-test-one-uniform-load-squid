@@ -1,0 +1,10 @@
+type Transfer @entity {
+  id: ID!
+  network: String! @index
+  block: Int! @index
+  timestamp: DateTime! @index
+  from: String! @index
+  to: String! @index
+  value: BigInt!
+  txHash: String! @index
+}
