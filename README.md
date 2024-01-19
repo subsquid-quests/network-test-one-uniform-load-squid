@@ -173,7 +173,7 @@ Sync this squid using the key from the quest card. The syncing progress is track
 
 # About this squid
 
-This [squid](https://docs.subsquid.io/) retrieves native token burns on ETH, BSC, Base and Moonbeam. It also grabs Transfer events from popular stablecoins on the same networks. It does not keep any data, as it's sole purpose is to stress test the network.
+This [squid](https://docs.subsquid.io/) retrieves native token burns on ETH, BSC, Base and Moonbeam. It does not keep any data, as it's sole purpose is to stress test the network.
 
 Data ingester ("processor") code is defined for all networks in `src/testConfig.ts`. The executable `src/main.ts` chooses the settings to use based on its sole command line argument. The scripts file `commands.json` contains commands for running each processor (`process:eth`, `process:bsc`, `process:base` and `process:moonbeam`). You can also use `sqd run` to run all the services at once; the list of services is kept in the [squid manifest](https://docs.subsquid.io/cloud/reference/manifest/) at `squid.yaml`.
 
