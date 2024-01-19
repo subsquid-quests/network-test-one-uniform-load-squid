@@ -113,14 +113,9 @@ A healthy response should look similar to
 
 3. Stake some tSQD on the ID of your future gateway by running
    ```bash
-   docker run \
-     -e PRIVATE_KEY=0xXXXX... \
-     -v ./query-gateway/keys/networkTestOneUniformLoad.key:/app/networkTestOneUniformLoad.key \
-     -e CLIENT_KEY_PATH=/app/networkTestOneUniformLoad.key \
-     -e STAKE_AMOUNT=100 \
-     subsquid/register-gateway:latest
+   sqd stake
    ```
-   Replace `XXXX...` with the private key of the wallet where you have your tSQDs. [Here's an instruction on how to get your private key on Metamask](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key). The key will be used to sign the staking transaction.
+   The command will prompt you for the private key of the wallet where you have your tSQDs. The key will be used to sign the staking transaction. [Here's an instruction on how to get your private key on Metamask](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
 
 4. Start the query gateway with
    ```bash
@@ -128,23 +123,38 @@ A healthy response should look similar to
    ```
    The key will be used for signing the CU allocation transactions.
 
-5. Randomize the starting blocks by running
-   ```bash
-   sqd randomize
-   ```
-
-6. Build the squid code
+5. Build the squid code
    ```bash
    sqd build
    ```
 
-7. Start your squid with
+6. Start your squid with
    ```bash
    sqd run .
    ```
    The command should output lines like these:
    ```
-   ... example output ...
+   [eth-processor] {"level":2,"time":1705681499120,"ns":"sqd:commands","msg":"PROCESS:ETH"}
+   [moonbeam-processor] {"level":2,"time":1705681499148,"ns":"sqd:commands","msg":"PROCESS:MOONBEAM"}
+   [base-processor] {"level":2,"time":1705681499155,"ns":"sqd:commands","msg":"PROCESS:BASE"}
+   [bsc-processor] {"level":2,"time":1705681499163,"ns":"sqd:commands","msg":"PROCESS:BSC"}
+   [eth-processor] 01:24:59 INFO  sqd:processor processing blocks from 955722
+   [base-processor] 01:24:59 INFO  sqd:processor processing blocks from 1208926
+   [moonbeam-processor] 01:24:59 INFO  sqd:processor processing blocks from 166845
+   [bsc-processor] 01:24:59 INFO  sqd:processor processing blocks from 16996735
+   [eth-processor] 01:24:59 INFO  sqd:processor using archive data source
+   [eth-processor] 01:24:59 INFO  sqd:processor prometheus metrics are served at port 34253
+   [base-processor] 01:24:59 INFO  sqd:processor using archive data source
+   [base-processor] 01:24:59 INFO  sqd:processor prometheus metrics are served at port 40205
+   [moonbeam-processor] 01:24:59 INFO  sqd:processor using archive data source
+   [moonbeam-processor] 01:24:59 INFO  sqd:processor prometheus metrics are served at port 33691
+   [bsc-processor] 01:24:59 INFO  sqd:processor using archive data source
+   [bsc-processor] 01:24:59 INFO  sqd:processor prometheus metrics are served at port 41199
+   [moonbeam-processor] 01:25:00 INFO  sqd:processor:mapping Got 0 burn txs and 0 USDT transfers
+   [moonbeam-processor] 01:25:00 INFO  sqd:processor 171971 / 5325985, rate: 3823 blocks/sec, mapping: 2729 blocks/sec, 1364 items/sec, eta: 23m
+   [base-processor] 01:25:00 INFO  sqd:processor:mapping Got 0 burn txs and 0 USDT transfers
+   [base-processor] 01:25:00 INFO  sqd:processor 1477379 / 9442733, rate: 175758 blocks/sec, mapping: 8032 blocks/sec, 1339 items/sec, eta: 45s
+   [base-processor] 01:25:02 INFO  sqd:processor:mapping Got 1 burn txs and 0 USDT transfers
    ```
 
    The squid should download enough data in 3-4 hours. When it's done, stop it with Ctrl-C, then stop and remove the query gateway containers with
@@ -167,6 +177,6 @@ Sync this squid using the key from the quest card. The syncing progress is track
 
 This [squid](https://docs.subsquid.io/) retrieves native token burns on ETH, BSC, Base and Moonbeam. It also grabs Transfer events from popular stablecoins on the same networks. It does not keep any data, as it's sole purpose is to stress test the network.
 
-Data ingester ("processor") code for each network is located at the corresponding `src/` subdirectory: `src/eth`, `src/bsc`, `src/base` and`src/moonbeam`. The scripts file `commands.json` contains commands for running each processor (`process:eth`, `process:bsc`, `process:base` and `process:moonbeam` correspondingly). You can also use `sqd run` to run all the services at once; the list of services is kept in the [squid manifest](https://docs.subsquid.io/cloud/reference/manifest/) at `squid.yaml`.
+Data ingester ("processor") code is defined for all networks in `src/testConfig.ts`. The executable `src/main.ts` chooses the settings to use based on its sole command line argument. The scripts file `commands.json` contains commands for running each processor (`process:eth`, `process:bsc`, `process:base` and `process:moonbeam`). You can also use `sqd run` to run all the services at once; the list of services is kept in the [squid manifest](https://docs.subsquid.io/cloud/reference/manifest/) at `squid.yaml`.
 
 The squid uses Phase Two [Subsquid Network](https://docs.subsquid.io/subsquid-network) as its primary data source.
