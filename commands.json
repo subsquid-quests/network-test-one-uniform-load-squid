@@ -11,7 +11,7 @@
       "cmd": ["tsc"]
     },
     "check-key": {
-      "cmd": ["node", "query-gateway/scripts/checkKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"],
+      "cmd": ["node", "scripts/checkKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"],
       "hidden": true
     },
     "up": {
