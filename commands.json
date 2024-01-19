@@ -14,6 +14,11 @@
       "cmd": ["node", "scripts/checkKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"],
       "hidden": true
     },
+    "stake": {
+      "deps": ["check-key"],
+      "description": "Runs a script that interactively walks you through staking tSQD for a Subsquid network gateway",
+      "cmd": ["node", "scripts/stake.js"]
+    },
     "up": {
       "deps": ["check-key"],
       "description": "Start a Subsquid network gateway",

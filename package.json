@@ -10,6 +10,8 @@
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
+    "@inquirer/input": "^1.2.14",
+    "@inquirer/password": "^1.1.14",
     "@types/node": "^20.11.5",
     "ethereumjs-wallet": "^1.0.2",
     "typescript": "~5.3.3"
