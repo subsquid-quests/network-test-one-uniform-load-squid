@@ -11,7 +11,7 @@ services:
         12D3KooWQER7HEpwsvqSzqzaiV36d3Bn6DZrnwEunnzS76pgZkMU /dns4/testnet.subsquid.io/tcp/32345
       RPC_URL: https://sepolia-rollup.arbitrum.io/rpc
       CONFIG_PATH: /app/data/config/gateway-config.yml
-      KEY_PATH: /app/data/keys/loadPhaseTwo.key
+      KEY_PATH: /app/data/keys/networkTestOneUniformLoad.key
       ALLOCATIONS_DB_PATH: /app/data/allocations.db
       WALLET_KEY: "${WALLET_PRIVATE_KEY}"
       MULTICALL_CONTRACT_ADDR: 0xcA11bde05977b3631167028862bE2a173976CA11

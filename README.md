@@ -12,7 +12,9 @@
 
 [Subsquid Network Docs](https://docs.subsquid.io/subsquid-network/)
 
-# Help loading Phase Two Subsquid network
+# Network Test One: Uniform Load
+
+Some tests of Subsquid Network Phase Two testnet require that all workers regularly serve some queries. You can help the team create this type of uniform load by running this squid.
 
 The network is ready for its first stress test! Help with it by running this squid.
 
@@ -96,22 +98,25 @@ A healthy response should look similar to
 
 ### III. Run the squid
 
-1. Open a terminal and run the following commands to retrieve the squid and enter its folder:
+1. Open a terminal and run the following commands to retrieve the squid, enter its folder and install dependencies:
    ```bash
-   sqd init load-phase-two-squid -t https://github.com/subsquid-quests/load-phase-two-squid
+   sqd init network-test-one-uniform-load-squid -t https://github.com/subsquid-quests/network-test-one-uniform-load-squid
    ```
    ```bash
-   cd load-phase-two-squid
+   cd network-test-one-uniform-load-squid
+   ```
+   ```bash
+   npm ci
    ```
 
-2. Press "Get Key" button in the quest card to obtain the `loadPhaseTwo.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used when staking tSQD to allocate bandwidth and by the query gateway container as a peer ID.
+2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when staking tSQD to allocate bandwidth and as it operates.
 
 3. Stake some tSQD on the ID of your future gateway by running
    ```bash
    docker run \
      -e PRIVATE_KEY=0xXXXX... \
-     -v ./query-gateway/keys/loadPhaseTwo.key:/app/loadPhaseTwo.key \
-     -e CLIENT_KEY_PATH=/app/anton.key \
+     -v ./query-gateway/keys/networkTestOneUniformLoad.key:/app/networkTestOneUniformLoad.key \
+     -e CLIENT_KEY_PATH=/app/networkTestOneUniformLoad.key \
      -e STAKE_AMOUNT=100 \
      subsquid/register-gateway:latest
    ```
@@ -121,16 +126,15 @@ A healthy response should look similar to
    ```bash
    WALLET_PRIVATE_KEY=XXXX... sqd up
    ```
-   The key will be used for... **(what?)**
+   The key will be used for signing the CU allocation transactions.
 
 5. Randomize the starting blocks by running
    ```bash
    sqd randomize
    ```
 
-6. Prepare the squid for running by installing dependencies and building the source code:
+6. Build the squid code
    ```bash
-   npm ci
    sqd build
    ```
 
