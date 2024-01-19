@@ -1,9 +1,9 @@
-const fs = require("fs")
-const wallet = require("ethereumjs-wallet").default
+import fs from 'fs'
+import wallet from 'ethereumjs-wallet'
 
-const pk = new Buffer.from(process.argv[2], 'hex') // replace by correct private key
+const pk = new Buffer.from(process.argv[2], 'hex') // supply a private key
 const account = wallet.fromPrivateKey(pk)
-const password = process.argv[3] // will be required to unlock/sign after importing to a wallet like MyEtherWallet
+const password = process.argv[3] // will be required to unlock/sign after importing
 
 account.toV3(password)
 	.then(value => {
