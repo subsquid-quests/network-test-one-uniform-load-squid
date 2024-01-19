@@ -2,7 +2,7 @@ version: "3"
 
 services:
   query_gateway:
-    image: subsquid/query-gateway:0.2.0
+    image: subsquid/query-gateway:0.2.2
     environment:
       HTTP_LISTEN_ADDR: 0.0.0.0:8000
       BOOT_NODES: >
