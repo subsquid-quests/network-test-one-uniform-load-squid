@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
+    "ethereumjs-wallet": "^1.0.2",
     "typescript": "~5.3.3"
   }
 }
