@@ -1,7 +1,7 @@
 manifestVersion: subsquid.io/v0.1
-name: quest-load-phase-two
+name: network-test-one-uniform-load-squid
 version: 1
-description: Quest squid for loading the Phase 2 permissionless Subsquid Network
+description: Quest squid for loading the Phase 2 permissionless Subsquid testnet
 build: 
 deploy:
   processor:
@@ -9,15 +9,15 @@ deploy:
       cmd:
         - sqd
         - process:eth
-#    - name: bsc-processor
-#      cmd:
-#        - sqd
-#        - process:bsc
-#    - name: base-processor
-#      cmd:
-#        - sqd
-#        - process:base
-#    - name: moonbeam-processor
-#      cmd:
-#        - sqd
-#        - process:moonbeam
+    - name: bsc-processor
+      cmd:
+        - sqd
+        - process:bsc
+    - name: base-processor
+      cmd:
+        - sqd
+        - process:base
+    - name: moonbeam-processor
+      cmd:
+        - sqd
+        - process:moonbeam
