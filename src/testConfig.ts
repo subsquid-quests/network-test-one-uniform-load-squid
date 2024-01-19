@@ -18,6 +18,7 @@ const commonConfig = {
             to: ['0x0000000000000000000000000000000000000000']
         }
     ],
+    logs: [],
     fields: {
         transaction: allTransactionFields,
         block: allBlockHeaderFields
