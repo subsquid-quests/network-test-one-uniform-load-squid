@@ -1,7 +1,9 @@
-import {assertNotNull} from '@subsquid/util-internal'
-
 export const NULL_ADDRESS = '0x0000000000000000000000000000000000000000'
 export const ERC20_TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+
+function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
 
 const commonConfig = {
     batchHandler: async (ctx: any) => {
@@ -30,7 +32,7 @@ export const networksConfig = {
     eth: {
         datasetUrl: 'http://localhost:8000/network/ethereum-mainnet',
         range: {
-            from: parseInt(assertNotNull(process.env.ETH_STARTING_BLOCK))
+            from: getRandomInt(0, 17_000_000)
         },
         logs: [{
             address: ['0x7EA2be2df7BA6E54B1A9C70676f668455E329d29'.toLowerCase()], // USDT
@@ -44,7 +46,7 @@ export const networksConfig = {
     bsc: {
         datasetUrl: 'http://localhost:8000/network/binance-mainnet',
         range: {
-            from: parseInt(assertNotNull(process.env.BSC_STARTING_BLOCK))
+            from: getRandomInt(0, 32_000_000)
         },
         logs: [{
             address: ['0x55d398326f99059fF775485246999027B3197955'.toLowerCase()], // BUSD
@@ -58,7 +60,7 @@ export const networksConfig = {
     base: {
         datasetUrl: 'http://localhost:8000/network/base-mainnet',
         range: {
-            from: parseInt(assertNotNull(process.env.BASE_STARTING_BLOCK))
+            from: getRandomInt(0, 8_000_000)
         },
         logs: [{
             address: ['0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'.toLowerCase()], // USDC
@@ -72,7 +74,7 @@ export const networksConfig = {
     moonbeam: {
         datasetUrl: 'http://localhost:8000/network/moonbeam-mainnet',
         range: {
-            from: parseInt(assertNotNull(process.env.MOONBEAM_STARTING_BLOCK))
+            from: getRandomInt(0, 3_000_000)
         },
         logs: [{
             address: ['0x8f552a71EFE5eeFc207Bf75485b356A0b3f01eC9'.toLowerCase()], // USDC
