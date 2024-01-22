@@ -29,28 +29,32 @@ export const networksConfig = {
     eth: {
         datasetUrl: 'http://localhost:8000/network/ethereum-mainnet',
         range: {
-            from: getRandomInt(0, 17_000_000)
+//            from: getRandomInt(0, 17_000_000)
+            from: 0
         },
         ...commonConfig
     },
     bsc: {
         datasetUrl: 'http://localhost:8000/network/binance-mainnet',
         range: {
-            from: getRandomInt(0, 32_000_000)
+//            from: getRandomInt(0, 32_000_000)
+            from: 0
         },
         ...commonConfig
     },
     base: {
         datasetUrl: 'http://localhost:8000/network/base-mainnet',
         range: {
-            from: getRandomInt(0, 8_000_000)
+//            from: getRandomInt(0, 8_000_000)
+            from: 0
         },
         ...commonConfig
     },
     moonbeam: {
         datasetUrl: 'http://localhost:8000/network/moonbeam-mainnet',
         range: {
-            from: getRandomInt(0, 3_000_000)
+//            from: getRandomInt(0, 3_000_000)
+            from: 0
         },
         ...commonConfig
     }

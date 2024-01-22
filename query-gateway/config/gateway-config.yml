@@ -12,5 +12,5 @@ available_datasets:
   moonbeam-mainnet: "czM6Ly9tb29uYmVhbS1ldm0tMQ"
 allocate_interval_sec: 60
 compute_units:
-  minimum: 1
-  allocate: 2
+  minimum: 5
+  allocate: 10
