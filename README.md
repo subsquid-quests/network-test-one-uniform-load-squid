@@ -114,7 +114,7 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Stake some tSQD on the ID of your future gateway by filling the form on the [staking page](https://app.devsquid.net/profile/gateways/add).
+4. Stake **enter the exact amount here** tSQD on the ID of your future gateway by filling the form on the [staking page](https://app.subsquid.io/profile/gateways/add) ([dev version](https://app.devsquid.net/profile/gateways/add)).
 
 5. Start the query gateway with
    ```bash
