@@ -109,24 +109,28 @@ A healthy response should look similar to
 
 2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when staking tSQD to allocate bandwidth and as it operates.
 
-3. Stake some tSQD on the ID of your future gateway by running
+3. Get the peer ID that your future gateway will have by running:
    ```bash
-   sqd stake
+   sqd get-peer-id
    ```
-   The command will prompt you for the private key of the wallet where you have your tSQDs. The key will be used to sign the staking transaction. [Here's an instruction on how to get your private key on Metamask](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
 
-4. Start the query gateway with
+4. Stake some tSQD on the ID of your future gateway by filling the form on the [staking page](https://app.devsquid.net/profile/gateways/add).
+
+5. Start the query gateway with
    ```bash
-   WALLET_PRIVATE_KEY=XXXX... sqd up
+   sqd up
    ```
-   The key will be used for signing the CU allocation transactions.
+   If you'd like to check if the staking was successful, you can inspect the logs of the query gateway container with `docker logs <query_gateway_container_name>`. After one-two minutes required for the node startup it should contain some lines like this one:
+   ```
+   ...paste the line detailing the CU amount here...
+   ```
 
-5. Build the squid code
+6. Build the squid code
    ```bash
    sqd build
    ```
 
-6. Start your squid with
+7. Start your squid with
    ```bash
    sqd run .
    ```
@@ -159,7 +163,6 @@ A healthy response should look similar to
    ```bash
    sqd down
    ```
-   You will get a warning about the missing `WALLET_PRIVATE_KEY` variable. That's normal.
 
 # Quest Info
 
