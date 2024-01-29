@@ -14,11 +14,6 @@
       "cmd": ["node", "scripts/checkKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"],
       "hidden": true
     },
-    "stake": {
-      "deps": ["check-key"],
-      "description": "Runs a script that interactively walks you through staking tSQD for a Subsquid network gateway",
-      "cmd": ["node", "scripts/stake.js"]
-    },
     "get-peer-id": {
       "deps": ["check-key"],
       "description": "Get a peer ID given the public key",
