@@ -164,10 +164,10 @@ A healthy response should look similar to
 > [!TIP]
 > Do not worry if the squid fails: any progress it made is saved. Simply restart it if it happens.
 
-   When it's done, stop it with Ctrl-C, then stop and remove the query gateway containers with
-   ```bash
-   sqd down
-   ```
+When done, stop the squid processor with Ctrl-C, then stop and remove the query gateway container with
+```bash
+sqd down
+```
 
 # Quest Info
 
