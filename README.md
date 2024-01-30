@@ -159,7 +159,12 @@ A healthy response should look similar to
    [base-processor] 01:25:02 INFO  sqd:processor:mapping Got 1 burn txs and 0 USDT transfers
    ```
 
-   The squid should download enough data in 3-4 hours. When it's done, stop it with Ctrl-C, then stop and remove the query gateway containers with
+   The squid should download enough data in 3-4 hours.
+
+> [!TIP]
+> Do not worry if the squid fails: any progress it made is saved. Simply restart it if it happens.
+
+   When it's done, stop it with Ctrl-C, then stop and remove the query gateway containers with
    ```bash
    sqd down
    ```
