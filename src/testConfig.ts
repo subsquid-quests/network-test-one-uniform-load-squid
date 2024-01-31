@@ -1,8 +1,7 @@
 import {allTransactionFields, allBlockHeaderFields} from './allFields'
+import {getRandomInt} from './utils'
 
-function getRandomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
+const gateway = 'http://localhost:8000'
 
 const commonConfig = {
     batchHandler: async (ctx: any) => {
@@ -19,6 +18,8 @@ const commonConfig = {
         }
     ],
     logs: [],
+    traces: [],
+    stateDiffs: [],
     fields: {
         transaction: allTransactionFields,
         block: allBlockHeaderFields
@@ -27,35 +28,23 @@ const commonConfig = {
 
 export const networksConfig = {
     eth: {
-        datasetUrl: 'http://localhost:8000/network/ethereum-mainnet',
-        range: {
-//            from: getRandomInt(0, 17_000_000)
-            from: 0
-        },
+        datasetUrl: `${gateway}/network/ethereum-mainnet`,
+        range: { from: getRandomInt(0, 14_000_000) },
         ...commonConfig
     },
     bsc: {
-        datasetUrl: 'http://localhost:8000/network/binance-mainnet',
-        range: {
-//            from: getRandomInt(0, 32_000_000)
-            from: 0
-        },
+        datasetUrl: `${gateway}/network/binance-mainnet`,
+        range: { from: getRandomInt(0, 30_000_000) },
         ...commonConfig
     },
     base: {
-        datasetUrl: 'http://localhost:8000/network/base-mainnet',
-        range: {
-//            from: getRandomInt(0, 8_000_000)
-            from: 0
-        },
+        datasetUrl: `${gateway}/network/base-mainnet`,
+        range: { from: getRandomInt(0, 4_000_000) },
         ...commonConfig
     },
     moonbeam: {
-        datasetUrl: 'http://localhost:8000/network/moonbeam-mainnet',
-        range: {
-//            from: getRandomInt(0, 3_000_000)
-            from: 0
-        },
+        datasetUrl: `${gateway}/network/moonbeam-mainnet`,
+        range: { from: 0 },
         ...commonConfig
     }
 }
