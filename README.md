@@ -114,23 +114,28 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Stake **enter the exact amount here** tSQD on the ID of your future gateway by filling the form on the [staking page](https://app.subsquid.io/profile/gateways/add) ([dev version](https://app.devsquid.net/profile/gateways/add)).
+4. Stake **enter the exact amount here** tSQD on the ID of your future gateway by filling the form on the [staking page](https://app.subsquid.io/profile/gateways/add) ([dev version](https://app.devsquid.net/profile/gateways/add)). Tips:
+   - Gateway registration and staking are two separate actions. Do not forget to do both.
+   - Make sure that you stake your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 10000 blocks.
 
-5. Start the query gateway with
+5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which computation units (CUs) will be allocated towards your gateway based on your tSQD stake.
+
+6. Start the query gateway with
    ```bash
    sqd up
    ```
    If you'd like to check if the staking was successful, you can inspect the logs of the query gateway container with `docker logs <query_gateway_container_name>`. After one-two minutes required for the node startup it should contain some lines like this one:
    ```
-   ...paste the line detailing the CU amount here...
+   [2024-01-31T14:55:06Z INFO  query_gateway::chain_updates] allocated CU: 24759 spent CU: 0
    ```
+   **update the exact CU amount**
 
-6. Build the squid code
+7. Build the squid code
    ```bash
    sqd build
    ```
 
-7. Start your squid with
+8. Start your squid with
    ```bash
    sqd run .
    ```
