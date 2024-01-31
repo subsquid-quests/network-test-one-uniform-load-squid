@@ -174,6 +174,8 @@ When done, stop the squid processor with Ctrl-C, then stop and remove the query 
 sqd down
 ```
 
+9. After the staking period ends, go to the [gateways staking page](https://app.subsquid.io/profile/gateways/) and unstake your tSQD - you will need them for other quests.
+
 # Quest Info
 
 | Category         | Skill Level                          | Time required (minutes) | Max Participants | Reward                              | Status |
