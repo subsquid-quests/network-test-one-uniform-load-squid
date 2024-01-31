@@ -9,16 +9,18 @@ const processor = new EvmBatchProcessor().setGateway(config.datasetUrl)
 
 if (config.range) processor.setBlockRange(config.range)
 if (config.includeAllBlocks) processor.includeAllBlocks()
-if (config.transactions) {
-    for (let txRequest of config.transactions) {
-        processor.addTransaction(txRequest)
-    }
+for (let txRequest of config.transactions) {
+    processor.addTransaction(txRequest)
 }
-if (config.logs) {
-    for (let logRequest of config.logs) {
-        processor.addLog(logRequest)
-    }
+for (let logRequest of config.logs) {
+    processor.addLog(logRequest)
 }
-if (config.fields) processor.setFields(config.fields)
+for (let traceRequest of config.traces) {
+    processor.addTrace(traceRequest)
+}
+for (let stateDiffRequest of config.stateDiffs) {
+    processor.addStateDiff(stateDiffRequest)
+}
+processor.setFields(config.fields)
 
 export { processor }
