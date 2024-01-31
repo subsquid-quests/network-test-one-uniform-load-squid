@@ -2,7 +2,7 @@ version: "3"
 
 services:
   query_gateway:
-    image: subsquid/query-gateway:0.2.2
+    image: subsquid/query-gateway:0.2.5
     environment:
       HTTP_LISTEN_ADDR: 0.0.0.0:8000
       BOOT_NODES: >
@@ -15,8 +15,8 @@ services:
       ALLOCATIONS_DB_PATH: /app/data/allocations.db
       MULTICALL_CONTRACT_ADDR: 0xcA11bde05977b3631167028862bE2a173976CA11
       WORKER_REGISTRATION_CONTRACT_ADDR: 0x7Bf0B1ee9767eAc70A857cEbb24b83115093477F
-      GATEWAY_REGISTRY_CONTRACT_ADDR: 0xC168fD9298141E3a19c624DF5692ABeeb480Fb94
-      GATEWAY_CONTRACT_CREATION_BLOCK: 6010034
+      NETWORK_CONTROLLER_CONTRACT_ADDR: 0x938026fefC5F2b6d7c1bCC7098A3Fd1A81C2AECF
+      GATEWAY_REGISTRY_CONTRACT_ADDR: 0x70FCB652F81436d8f1AFDc9F15085Fb2274281E8
     volumes:
       - ./query-gateway:/app/data
     ports:
