@@ -1,7 +1,9 @@
+import {assertNotNull} from '@subsquid/util-internal'
+
 import {allTransactionFields, allBlockHeaderFields} from './allFields'
 import {getRandomInt} from './utils'
 
-const gateway = 'http://localhost:8000'
+const gateway = assertNotNull(process.env.SUBSQUID_NETWORK_GATEWAY)
 
 const commonConfig = {
     batchHandler: async (ctx: any) => {

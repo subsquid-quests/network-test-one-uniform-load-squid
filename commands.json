@@ -30,19 +30,19 @@
     },
     "process:eth": {
       "description": "Load .env and start the ETH squid processor",
-      "cmd": ["node", "lib/main.js", "eth"]
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "eth"]
     },
     "process:bsc": {
       "description": "Load .env and start the BSC squid processor",
-      "cmd": ["node", "lib/main.js", "bsc"]
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "bsc"]
     },
     "process:base": {
       "description": "Load .env and start the Base squid processor",
-      "cmd": ["node", "lib/main.js", "base"]
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "base"]
     },
     "process:moonbeam": {
       "description": "Load .env and start the Base squid processor",
-      "cmd": ["node", "lib/main.js", "moonbeam"]
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "moonbeam"]
     },
     "check-updates": {
       "cmd": ["npx", "--yes", "npm-check-updates", "--filter=/subsquid/", "--upgrade"],

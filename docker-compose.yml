@@ -20,4 +20,4 @@ services:
     volumes:
       - ./query-gateway:/app/data
     ports:
-      - "8000:8000"
+      - "19174:8000"
