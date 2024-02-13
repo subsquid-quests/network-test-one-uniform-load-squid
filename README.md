@@ -107,7 +107,7 @@ A healthy response should look similar to
    npm ci
    ```
 
-2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when staking tSQD to allocate bandwidth and as it operates.
+2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when locking tSQD to allocate bandwidth and as it operates.
 
 3. Get the peer ID that your future gateway will have by running:
    ```bash
@@ -115,7 +115,7 @@ A healthy response should look similar to
    ```
 
 4. Register your future gateway and get CU for 100 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
-   - Gateway registration and staking are two separate actions. Do not forget to do both.
+   - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
    - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks.
    - Leave the "Publicly available" switch disabled.
 
