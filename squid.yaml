@@ -1,5 +1,5 @@
 manifestVersion: subsquid.io/v0.1
-name: network-test-one-uniform-load-squid
+name: uniform-load-squid
 version: 1
 description: Quest squid for loading the Phase 2 permissionless Subsquid testnet
 build: 
