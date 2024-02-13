@@ -1,10 +1,10 @@
 scheduler_id: "12D3KooWQER7HEpwsvqSzqzaiV36d3Bn6DZrnwEunnzS76pgZkMU"
 send_metrics: true
-worker_inactive_threshold_sec: 120
-worker_greylist_time_sec: 600
+worker_inactive_threshold_sec: 60
+worker_greylist_time_sec: 120
 default_query_timeout_sec: 60
 summary_print_interval_sec: 30
-workers_update_interval_sec: 180
+workers_update_interval_sec: 60
 available_datasets:
   ethereum-mainnet: "czM6Ly9ldGhlcmV1bS1tYWlubmV0LTE"
   binance-mainnet: "czM6Ly9ic2MtbWFpbm5ldC0x"
