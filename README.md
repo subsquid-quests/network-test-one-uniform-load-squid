@@ -117,7 +117,7 @@ A healthy response should look similar to
 4. Register your future gateway and stake 100 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add). Tips:
    - Gateway registration and staking are two separate actions. Do not forget to do both.
    - Make sure that you stake your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks.
-   - Leave the "Publicly available" disabled.
+   - Leave the "Publicly available" switch disabled.
 
 5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which computation units (CUs) will be allocated towards your gateway based on your tSQD stake.
 
