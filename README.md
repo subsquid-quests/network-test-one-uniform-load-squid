@@ -16,7 +16,7 @@
 
 Some tests of Subsquid Network Phase Two testnet require that all workers regularly serve some queries. You can help the team create this type of uniform load by running this squid.
 
-Note: you'll need to have at least 100 tSQD to complete this quest. Obtain them by doing other quests first.
+Note: you'll need to have at least 10 tSQD to complete this quest. Obtain them by doing other quests first.
 
 ### I. Install dependencies: Node.js, Docker, Git.
 
@@ -114,9 +114,9 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Register your future gateway and get CU for 100 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
+4. Register your future gateway and get CU for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
    - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
-   - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks.
+   - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks. ❗Do not forget to unlock it after that❗
    - Leave the "Publicly available" switch disabled.
 
 5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which computation units (CUs) will be allocated towards your gateway based on your tSQD stake.
