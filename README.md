@@ -96,7 +96,7 @@ A healthy response should look similar to
 
 ### III. Run the squid
 
-1. Open a terminal and run the following commands to retrieve the squid, enter its folder and install dependencies:
+1. Open a terminal, navigate to any folder for which you have write permissions and run the following commands to retrieve the squid, enter its folder and install dependencies:
    ```bash
    sqd init uniform-load-squid -t https://github.com/subsquid-quests/network-test-one-uniform-load-squid
    ```
@@ -106,6 +106,9 @@ A healthy response should look similar to
    ```bash
    npm ci
    ```
+
+> [!IMPORTANT]
+> If you're on Windows, the terminal opens in `C:\Windows\system32` by default. Do not download your squid there, navigate someplace else.
 
 2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when locking tSQD to allocate bandwidth and as it operates.
 
