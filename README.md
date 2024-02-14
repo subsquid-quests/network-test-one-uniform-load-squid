@@ -117,24 +117,27 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Register your future gateway and get computation units (*CUs*) for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
-   - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
+4. Register your future gateway using [this page](https://app.subsquid.io/profile/gateways/add?testnet).
+   - Use the peer ID you obtained in the previous step.
    - Leave the "Publicly available" switch disabled.
-   - The "Lock blocks duration" field lets you tune the length of time during which you'll be able to query the network, measured in blocks of Arbitrum Sepolia's L1 (that is, Ethereum Sepolia). The minumum is five hours, but you can opt to lock for longer if you intend to work on the quest over multiple days.
 
-     | Time              | Blocks |
-     |:-----------------:|:------:|
-     | 5 hours (minimum) | 1500   |
-     | 24 hours          | 7200   |
-     | 72 hours          | 21600  |
+5. Lock 10 tSQD by selecting your gateway on [this page](https://app.subsquid.io/profile/gateways?testnet), clicking "Get CU" and submitting the form. Once done, you will begin getting computation units (*CUs*) once every epoch (~15 minutes).
 
-     Be aware that you'll need to unlock your tokens manually after the end of this period. The tokens you get back will be used in subsequent quests.
+   The "Lock blocks duration" field lets you tune the length of time during which you'll be able to query the network, measured in blocks of Arbitrum Sepolia's L1 (that is, Ethereum Sepolia). The minumum is five hours, but you can opt to lock for longer if you intend to work on the quest over multiple days.
 
-     If the locking period expires before you finish your work, simply unlock your tokens, then lock them again.
+   | Time              | Blocks |
+   |:-----------------:|:------:|
+   | 5 hours (minimum) | 1500   |
+   | 24 hours          | 7200   |
+   | 72 hours          | 21600  |
 
-5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which CUs will be allocated towards your gateway based on how many tSQD you locked.
+   Be aware that you'll need to unlock your tokens manually after the end of this period. The tokens you get back will be used in subsequent quests.
 
-6. Start the query gateway with
+   If the locking period expires before you finish your work, simply unlock your tokens, then lock them again.
+
+6. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which CUs will be allocated towards your gateway.
+
+7. Start the query gateway with
    ```bash
    sqd up
    ```
@@ -143,12 +146,12 @@ A healthy response should look similar to
    [2024-01-31T14:55:06Z INFO  query_gateway::chain_updates] allocated CU: 48300 spent CU: 0
    ```
 
-7. Build the squid code
+8. Build the squid code
    ```bash
    sqd build
    ```
 
-8. Start your squid with
+9. Start your squid with
    ```bash
    sqd run .
    ```
@@ -187,7 +190,7 @@ When done, stop the squid processor with Ctrl-C, then stop and remove the query 
 sqd down
 ```
 
-9. After the locking period ends, go to the [gateways page](https://app.subsquid.io/profile/gateways/) and unlock your tSQD - you will need them for other quests.
+10. After the locking period ends, go to the [gateways page](https://app.subsquid.io/profile/gateways/) and unlock your tSQD - you will need them for other quests.
 
 # Quest Info
 
