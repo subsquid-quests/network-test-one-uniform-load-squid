@@ -1,8 +1,7 @@
-![sqdstella]()
 <p align="center">
 <picture>
-    <source srcset="https://github.com/subsquid-quests/network-test-one-uniform-load-squid/assets/7452464/135746dc-a48b-46b8-bce0-f7e5de18f4f9" media="(prefers-color-scheme: dark)">
-    <img src="https://github.com/subsquid-quests/network-test-one-uniform-load-squid/assets/7452464/135746dc-a48b-46b8-bce0-f7e5de18f4f9" alt="Subsquid Logo">
+    <source srcset="https://uploads-ssl.webflow.com/63b5a9958fccedcf67d716ac/64662df3a5a568fd99e3600c_Squid_Pose_1_White-transparent-slim%201.png" media="(prefers-color-scheme: dark)">
+    <img src="https://uploads-ssl.webflow.com/63b5a9958fccedcf67d716ac/64662df3a5a568fd99e3600c_Squid_Pose_1_White-transparent-slim%201.png" alt="Subsquid Logo">
 </picture>
 </p>
 
