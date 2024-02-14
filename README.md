@@ -114,12 +114,20 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Register your future gateway and get CU for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
+4. Register your future gateway and get computation units (*CUs*) for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
    - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
-   - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks. ❗Do not forget to unlock it after that❗
    - Leave the "Publicly available" switch disabled.
+   - The "Lock blocks duration" field lets you tune the length of time during which you'll be able to query the network, measured in blocks of Arbitrum Sepolia's L1 (that is, Ethereum Sepolia). The minumum is five hours, but you can opt to lock for longer if you intend to work on the quest over multiple days.
 
-5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which computation units (CUs) will be allocated towards your gateway based on your tSQD stake.
+     | Time              | Blocks |
+     |:-----------------:|:------:|
+     | 5 hours (minimum) | 1500   |
+     | 24 hours          | 7200   |
+     | 72 hours          | 21600  |
+
+     Be aware that you'll need to unlock your tokens manually after the end of this period. The tokens you get back will be used in subsequent quests.
+
+5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which CUs will be allocated towards your gateway based on how many tSQD you locked.
 
 6. Start the query gateway with
    ```bash
@@ -174,7 +182,7 @@ When done, stop the squid processor with Ctrl-C, then stop and remove the query 
 sqd down
 ```
 
-9. After the staking period ends, go to the [gateways staking page](https://app.subsquid.io/profile/gateways/) and unstake your tSQD - you will need them for other quests.
+9. After the locking period ends, go to the [gateways page](https://app.subsquid.io/profile/gateways/) and unlock your tSQD - you will need them for other quests.
 
 # Quest Info
 
