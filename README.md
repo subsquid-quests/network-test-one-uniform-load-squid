@@ -109,7 +109,7 @@ A healthy response should look similar to
 
 2. Press "Get Key" button in the quest card to obtain the `networkTestOneUniformLoad.key` key file. Save it to the `./query-gateway/keys` subfolder of the squid folder. The file will be used to identify your local query gateway when locking tSQD to allocate bandwidth and as it operates.
 
-3. Get the peer ID that your future gateway will have by running:
+3. Get the peer ID of your future gateway by running:
    ```bash
    sqd get-peer-id
    ```
