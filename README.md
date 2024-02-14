@@ -116,7 +116,7 @@ A healthy response should look similar to
 
 4. Register your future gateway and get CU for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
    - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
-   - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks.
+   - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks. ❗Do not forget to unlock it after that❗
    - Leave the "Publicly available" switch disabled.
 
 5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which computation units (CUs) will be allocated towards your gateway based on your tSQD stake.
