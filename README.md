@@ -127,6 +127,8 @@ A healthy response should look similar to
 
      Be aware that you'll need to unlock your tokens manually after the end of this period. The tokens you get back will be used in subsequent quests.
 
+     If the locking period expires before you finish your work, simply unlock your tokens, then lock them again.
+
 5. Wait for about 15 minutes. This is the time it takes for Subsquid Network to enter a new epoch, at the beginning of which CUs will be allocated towards your gateway based on how many tSQD you locked.
 
 6. Start the query gateway with
