@@ -16,7 +16,7 @@
 
 Some tests of Subsquid Network Phase Two testnet require that all workers regularly serve some queries. You can help the team create this type of uniform load by running this squid.
 
-Note: you'll need to have at least 100 tSQD to complete this quest. Obtain them by doing other quests first.
+Note: you'll need to have at least 10 tSQD to complete this quest. Obtain them by doing other quests first.
 
 ### I. Install dependencies: Node.js, Docker, Git.
 
@@ -114,7 +114,7 @@ A healthy response should look similar to
    sqd get-peer-id
    ```
 
-4. Register your future gateway and get CU for 100 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
+4. Register your future gateway and get CU for 10 tSQD on it using [this page](https://app.subsquid.io/profile/gateways/add?testnet). Tips:
    - Gateway registration and tSQD locking are two separate actions. Do not forget to do both.
    - Make sure that you lock your tSQD for at least five hours. On Arbitrum Sepolia that's roughly 1500 (L1) blocks.
    - Leave the "Publicly available" switch disabled.
@@ -127,7 +127,7 @@ A healthy response should look similar to
    ```
    If you'd like to check if the staking was successful, you can inspect the logs of the query gateway container with `docker logs <query_gateway_container_name>`. After one-two minutes required for the node startup it should contain some lines like this one:
    ```
-   [2024-01-31T14:55:06Z INFO  query_gateway::chain_updates] allocated CU: 4830 spent CU: 0
+   [2024-01-31T14:55:06Z INFO  query_gateway::chain_updates] allocated CU: 48300 spent CU: 0
    ```
 
 7. Build the squid code
