@@ -85,10 +85,6 @@ Open a terminal and run
 ```bash
 npm install --global @subsquid/cli@latest
 ```
-
-> [!NOTE]
-> There's currently an issue with `@subsquid/cli` preventing it from being installed with the command above on Windows. Use `npm i -g @subsquid/cli@latest --ignore-scripts` as a temporary workaround.
-
 This adds the [`sqd` command](https://docs.subsquid.io/squid-cli/). Verify that the installation was successful by running
 ```bash
 sqd --version
