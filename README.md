@@ -141,10 +141,27 @@ A healthy response should look similar to
    ```bash
    sqd up
    ```
+
    If you'd like to check if the locking was successful, you can inspect the logs of the query gateway container with `docker logs <query_gateway_container_name>`. After one-two minutes required for the node startup it should contain some lines like this one:
    ```
    [2024-01-31T14:55:06Z INFO  query_gateway::chain_updates] allocated CU: 48300 spent CU: 0
    ```
+
+> [!TIP]
+>   If you get an error message about `unknown shorthand flag: 'd' in -d`, that means that you're using an old version of `docker` that does not support the `compose` command yet. Update Docker or edit the `commands.json` file as follows:
+>   ```diff
+>            "up": {
+>            "deps": ["check-key"],
+>            "description": "Start a PG database",
+>   -        "cmd": ["docker", "compose", "up", "-d"]
+>   +        "cmd": ["docker-compose", "up", "-d"]
+>          },
+>          "down": {
+>            "description": "Drop a PG database",
+>   -        "cmd": ["docker", "compose", "down"]
+>   +        "cmd": ["docker-compose", "down"]
+>          },
+>   ```
 
 8. Build the squid code
    ```bash
