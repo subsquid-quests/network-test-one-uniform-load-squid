@@ -85,7 +85,7 @@ Open a terminal and run
 ```bash
 npm install --global @subsquid/cli@latest
 ```
-This adds the [`sqd` command](/squid-cli). Verify that the installation was successful by running
+This adds the [`sqd` command](https://docs.subsquid.io/squid-cli/). Verify that the installation was successful by running
 ```bash
 sqd --version
 ```
