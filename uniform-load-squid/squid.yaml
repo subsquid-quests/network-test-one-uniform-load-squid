@@ -1,0 +1,23 @@
+manifestVersion: subsquid.io/v0.1
+name: uniform-load-squid
+version: 1
+description: Quest squid for loading the Phase 2 permissionless Subsquid testnet
+build: 
+deploy:
+  processor:
+    - name: eth-processor
+      cmd:
+        - sqd
+        - process:eth
+    - name: bsc-processor
+      cmd:
+        - sqd
+        - process:bsc
+    - name: base-processor
+      cmd:
+        - sqd
+        - process:base
+    - name: moonbeam-processor
+      cmd:
+        - sqd
+        - process:moonbeam
