@@ -1,0 +1,57 @@
+{
+  "$schema": "https://cdn.subsquid.io/schemas/commands.json",
+  "commands": {
+    "clean": {
+      "description": "delete all build artifacts",
+      "cmd": ["npx", "--yes", "rimraf", "lib"]
+    },
+    "build": {
+      "description": "Build the squid project",
+      "deps": ["clean"],
+      "cmd": ["tsc"]
+    },
+    "check-key": {
+      "cmd": ["node", "scripts/checkKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"],
+      "hidden": true
+    },
+    "get-peer-id": {
+      "deps": ["check-key"],
+      "description": "Get a peer ID given the public key",
+      "cmd": ["node", "scripts/getPeerIdFromGatewayKey.js", "query-gateway/keys/networkTestOneUniformLoad.key"]
+    },
+    "up": {
+      "deps": ["check-key"],
+      "description": "Start a Subsquid network gateway",
+      "cmd": ["docker", "compose", "up", "-d"]
+    },
+    "down": {
+      "description": "Stop a Subsquid network gateway",
+      "cmd": ["docker", "compose", "down"]
+    },
+    "process:eth": {
+      "description": "Load .env and start the ETH squid processor",
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "eth"]
+    },
+    "process:bsc": {
+      "description": "Load .env and start the BSC squid processor",
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "bsc"]
+    },
+    "process:base": {
+      "description": "Load .env and start the Base squid processor",
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "base"]
+    },
+    "process:moonbeam": {
+      "description": "Load .env and start the Base squid processor",
+      "cmd": ["node", "--require=dotenv/config", "lib/main.js", "moonbeam"]
+    },
+    "check-updates": {
+      "cmd": ["npx", "--yes", "npm-check-updates", "--filter=/subsquid/", "--upgrade"],
+      "hidden": true
+    },
+    "bump": {
+      "description": "Bump @subsquid packages to the latest versions",
+      "deps": ["check-updates"],
+      "cmd": ["npm", "i", "-f"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  query_gateway:
+    image: subsquid/query-gateway:0.2.8
+    environment:
+      HTTP_LISTEN_ADDR: 0.0.0.0:8000
+      BOOT_NODES: >
+        12D3KooWSRvKpvNbsrGbLXGFZV7GYdcrYNh4W2nipwHHMYikzV58 /dns4/testnet.subsquid.io/tcp/22345,
+        12D3KooWQC9tPzj2ShLn39RFHS5SGbvbP2pEd7bJ61kSW2LwxGSB /dns4/testnet.subsquid.io/tcp/22346,
+        12D3KooWQER7HEpwsvqSzqzaiV36d3Bn6DZrnwEunnzS76pgZkMU /dns4/testnet.subsquid.io/tcp/32345
+      RPC_URL: https://sepolia-rollup.arbitrum.io/rpc
+      CONFIG_PATH: /app/data/config/gateway-config.yml
+      KEY_PATH: /app/data/keys/networkTestOneUniformLoad.key
+      ALLOCATIONS_DB_PATH: /app/data/allocations.db
+    env_file:
+      - .contract-addrs
+    volumes:
+      - ./query-gateway:/app/data
+    ports:
+      - "19174:8000"
