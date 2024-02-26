@@ -16,6 +16,9 @@ w<p align="center">
 
 Some tests of Subsquid Network Phase Two testnet require that all workers regularly serve some queries. You can help the team create this type of uniform load by running this squid.
 
+> [!TIP]
+> If you locked any of your tSQD before, check if you can unlock any at the [gateways page](https://app.subsquid.io/profile/gateways?testnet).
+
 Note: you'll need to have at least 10 tSQD to complete this quest. Obtain them by doing other quests first.
 
 ### I. Install dependencies: Node.js, Docker, Git.
