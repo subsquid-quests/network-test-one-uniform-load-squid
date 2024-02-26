@@ -7,14 +7,13 @@
   "dependencies": {
     "@belopash/mock-store": "^0.0.0",
     "@subsquid/evm-processor": "^1.13.0",
-    "dotenv": "^16.3.1"
-  },
-  "devDependencies": {
+    "dotenv": "^16.3.1",
     "@inquirer/input": "^1.2.14",
     "@inquirer/password": "^1.1.14",
     "@types/node": "^20.11.5",
     "ethereumjs-wallet": "^1.0.2",
-    "typescript": "~5.3.3",
-    "libp2p": "0.32.5"
+    "libp2p": "0.32.5",
+    "peer-id": "^0.16.0",
+    "typescript": "~5.3.3"
   }
 }
