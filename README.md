@@ -229,3 +229,51 @@ This [squid](https://docs.subsquid.io/) retrieves native token burns on ETH, BSC
 Data ingester ("processor") code is defined for all networks in `src/testConfig.ts`. The executable `src/main.ts` chooses the settings to use based on its sole command line argument. The scripts file `commands.json` contains commands for running each processor (`process:eth`, `process:bsc`, `process:base` and `process:moonbeam`). You can also use `sqd run` to run all the services at once; the list of services is kept in the [squid manifest](https://docs.subsquid.io/cloud/reference/manifest/) at `squid.yaml`.
 
 The squid uses Phase Two [Subsquid Network](https://docs.subsquid.io/subsquid-network) as its primary data source.
+
+# Troubleshooting
+
+## Network errors
+
+Your squid may get a variety of errors while trying to connect to your local gateway. Some are completely normal, some indicate problems.
+
+### HTTP 503 and 504
+
+It is normal to receive a few of this during the sync. If all the responses you get are 503s or 504s and your gateway fails to serve any data, wait for a few hours and retry. The wait is necessary because this behavior can be caused by a network upgrade, which happen frequently - it's a testnet after all.
+
+### HTTP 403
+
+Typically occurs when the computation units (CUs) you should get for locking your tSQD fail to reach the worker nodes of the network. Here's how to approach fixing it:
+
+1. Make sure you waited for 20 minutes since you ran `sqd up` and try running your squid.
+2. If you're still getting 403s, attempt the following:
+   - re-run `sqd get-peer-id`
+   - visit the [gateways page](https://app.subsquid.io/profile/gateways?testnet) and make sure that your gateway is registered and you have some locked tSQD associated with your wallet
+   - shut your gateway down with `sqd down`
+   - remove `./query-gateway/allocations.db`
+   - start the gateway with `sqd up`
+   - wait for 20 minutes
+   - try running your squid
+3. If you're still getting 403s, attempt the following
+   - re-run `sqd get-peer-id`
+   - visit the [gateways page](https://app.subsquid.io/profile/gateways?testnet) and make sure that your gateway is registered and you have some locked tSQD associated with your wallet
+   - shut your gateway down with `sqd down`
+   - remove `./query-gateway/allocations.db`
+   - **unlock your tSQDs** (may take a while)
+   - **lock your tSQDs again**
+   - start the gateway with `sqd up`
+   - wait for 20 minutes
+   - try running your squid
+
+### Connection refused
+
+Can be identified by `ECONNREFUSED` in the squid logs. This means that your query gateway is not running. Run `sqd get-peer-id` then [check](https://app.subsquid.io/profile/gateways?testnet) if your gateway is registered. If it is, try re-running `sqd up` and then the quest squid.
+
+Alternatively, shut down all the Docker containers in your system (e.g. by rebooting) and start the quest from scratch.
+
+### Timeouts
+
+Try restarting your gateway container by running `sqd down` then `sqd up`. Then, wait for 20 minutes and try running your squid.
+
+# Contacting support
+
+If the standard [troubleshooting](#troubleshooting) fails, contact us via [Discord](https://discord.gg/subsquid). Make sure to attach the logs of your query gateway container as a txt file or via [Pastebin](https://pastebin.com). To get the logs, run `docker logs <query_gateway_container_name>`, where the container name can be found in the output of `sqd up`.
