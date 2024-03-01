@@ -245,17 +245,17 @@ It is normal to receive a few of this during the sync. If all the responses you 
 Typically occurs when the computation units (CUs) you should get for locking your tSQD fail to reach the worker nodes of the network. Here's how to approach fixing it:
 
 1. Make sure you waited for 20 minutes since you ran `sqd up` and try running your squid.
-2. If you're still getting 403s, attempt the following:
-   - re-run `sqd get-peer-id`
-   - visit the [gateways page](https://app.subsquid.io/profile/gateways?testnet) and make sure that your gateway is registered and you have some locked tSQD associated with your wallet
+   - You should see no tokens listed as "Pending lock" at the [gateways page](https://app.subsquid.io/profile/gateways?testnet). If you still do see some after about 40 minutes of any locking/relocking operations, [contact support](#contacting-support).
+2. If you're still getting 403s, visit the [gateways page](https://app.subsquid.io/profile/gateways?testnet) and ensure that you have some locked tSQD associated with your wallet. To do that, go to your gateway's page and check if the "Unlock" button is greyed out.
+   - If it is **NOT**, your locking period had ended. Unlock your tokens, lock them again, restart your gateway with `sqd down` then `sqd up` and go to step 1.
+   - If it is, proceed to step 3.
+3. If you're still getting 403s, attempt the following:
    - shut your gateway down with `sqd down`
    - remove `./query-gateway/allocations.db`
    - start the gateway with `sqd up`
    - wait for 20 minutes
    - try running your squid
-3. If you're still getting 403s, attempt the following
-   - re-run `sqd get-peer-id`
-   - visit the [gateways page](https://app.subsquid.io/profile/gateways?testnet) and make sure that your gateway is registered and you have some locked tSQD associated with your wallet
+4. If you're still getting 403s, attempt the following
    - shut your gateway down with `sqd down`
    - remove `./query-gateway/allocations.db`
    - **unlock your tSQDs** (may take a while)
