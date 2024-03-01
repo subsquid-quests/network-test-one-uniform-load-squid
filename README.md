@@ -266,7 +266,10 @@ Typically occurs when the computation units (CUs) you should get for locking you
 
 ### Connection refused
 
-Can be identified by `ECONNREFUSED` in the squid logs. This means that your query gateway is not running. Run `sqd get-peer-id` then [check](https://app.subsquid.io/profile/gateways?testnet) if your gateway is registered. If it is, try re-running `sqd up` and then the quest squid.
+Can be identified by `ECONNREFUSED` in the squid logs. This means that your query gateway is not running.
+
+1. Check the logs of the gateway container to see if it really isn't running. To get the logs, run `docker logs <query_gateway_container_name>`, where the container name can be found in the output of `sqd up`.
+2. Run `sqd get-peer-id` then [check](https://app.subsquid.io/profile/gateways?testnet) if your gateway is registered. If it is, try re-running `sqd up` and then the quest squid.
 
 Alternatively, shut down all the Docker containers in your system (e.g. by rebooting) and start the quest from scratch.
 
