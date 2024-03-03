@@ -1,0 +1,19 @@
+{
+  "name": "squid-evm-template",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "dependencies": {
+    "@belopash/mock-store": "^0.0.0",
+    "@inquirer/input": "^1.2.14",
+    "@inquirer/password": "^1.1.14",
+    "@subsquid/evm-processor": "^1.13.0",
+    "@types/node": "^20.11.5",
+    "dotenv": "^16.3.1",
+    "ethereumjs-wallet": "^1.0.2",
+    "libp2p": "^1.2.3",
+    "peer-id": "^0.16.0",
+    "typescript": "~5.3.3"
+  }
+}
